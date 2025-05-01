@@ -1,10 +1,15 @@
-function home(req,res){
-    res.render('home')
-}
 function about(req,res){
-    res.render('about')
+    let a = 20
+    res.render('about',{a})
 }
 function contact(req,res){
-    res.render('contact')
+    let ob = {
+        "name":"deepak"
+    }
+    res.render('contact',{ob})
 }
-module.exports = {home,about,contact}
+function home(req,res){
+    let a=[5,6,87,455,56]
+    res.render('home',{a})
+}
+module.exports = {about,contact,home}

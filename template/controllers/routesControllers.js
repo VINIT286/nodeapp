@@ -12,4 +12,5 @@ function home(req,res){
     let a=[5,6,87,455,56]
     res.render('home',{a})
 }
-module.exports = {about,contact,home}
+// module.exports = {about,contact,home}
+export{about,contact,home}

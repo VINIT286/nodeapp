@@ -1,3 +1,5 @@
+
+import User from "../models/user.js"
 function about(req,res){
     let a = 20
     res.render('about',{a})
@@ -12,5 +14,14 @@ function home(req,res){
     let a=[5,6,87,455,56]
     res.render('home',{a})
 }
+const adddata=(req,res)=>{
+    res.render("adddata")
+}
+const subdata = async(req,res)=>{
+    let name = req.body.name
+    let email = req.body.email
+    await User.create({name,email})
+    res.redirect("/")
+}
 // module.exports = {about,contact,home}
-export{about,contact,home}
+export{home,contact,about,adddata,subdata}

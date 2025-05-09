@@ -1,5 +1,6 @@
 
 import User from "../models/user.js"
+import Reg from "../models/reg.js"
 function about(req,res){
     let a = 20
     res.render('about',{a})
@@ -23,5 +24,22 @@ const subdata = async(req,res)=>{
     await User.create({name,email})
     res.redirect("/")
 }
+const showreg=(req,res)=>{
+    res.render("registration")
+}
+const regdata = async(req,res)=>{
+    let name = req.body.name
+    let email = req.body.email
+    let mobile = req.body.mobile
+    let password = req.body.password
+    let cpass = req.body.cpass
+    await Reg.create({name,email,mobile,password,cpass})
+    // res.redirect("/")
+}
+
+const getregdata = async(req,res)=>{
+    let d= await Reg.find()
+    res.json(d)
+}
 // module.exports = {about,contact,home}
-export{home,contact,about,adddata,subdata}
+export{home,contact,about,adddata,subdata,regdata,showreg,getregdata}

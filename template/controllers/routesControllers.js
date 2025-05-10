@@ -34,7 +34,7 @@ const regdata = async(req,res)=>{
     let password = req.body.password
     let cpass = req.body.cpass
     await Reg.create({name,email,mobile,password,cpass})
-    // res.redirect("/")
+    res.redirect("/")
 }
 
 const getregdata = async(req,res)=>{

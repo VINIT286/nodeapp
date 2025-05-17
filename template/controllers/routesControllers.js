@@ -39,7 +39,7 @@ const regdata = async(req,res)=>{
 
 const getregdata = async(req,res)=>{
     let d= await Reg.find()
-    // res.json(d)
+    res.json(d)
     res.render("showdata",{d})
 }
 // module.exports = {about,contact,home}
